@@ -19,5 +19,6 @@ from data.views import CarGenericView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("", CarGenericView.as_view())
+    path("<pk>/", CarGenericView.as_view({'get': 'retrieve'})),
+    path("", CarGenericView.as_view({'post': 'create'}))
 ]

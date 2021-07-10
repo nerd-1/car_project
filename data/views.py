@@ -1,9 +1,8 @@
-from data import models
-from rest_framework.generics import ListCreateAPIView
+from rest_framework.viewsets import ModelViewSet
 from .models import Cardata
 from .serializers import CarSerializer
 
 
-class CarGenericView(ListCreateAPIView):
+class CarGenericView(ModelViewSet):
     queryset = Cardata.objects.all()
     serializer_class = CarSerializer
